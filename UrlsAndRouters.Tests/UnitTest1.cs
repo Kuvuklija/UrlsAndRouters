@@ -81,16 +81,17 @@ namespace UrlsAndRouters.Tests
         [TestMethod]
         public void TestIncomingRoutes() {
             //проверить Url, который надеемся получить
-            //TestRouteMatch("~/", "Home", "Index");
+            TestRouteMatch("~/", "Home", "Index");
             //TestRouteMatch("~/Customer", "Customer", "Index");
             //TestRouteMatch("~/Customer/List", "Customer", "List");
-            //TestRouteMatch("~/Public", "Customer", "List");
-            //TestRouteMatch("~/Shop/Index", "Home", "Index");
+            TestRouteMatch("~/Public", "Customer", "List");
+            TestRouteMatch("~/Shop/Index", "Home", "Index");
             TestRouteMatch("~/", "Home", "Index", new { id = "DefaultId" });
-            TestRouteMatch("~/Customer", "Customer", "Index", new { id = "DefaultId"});
-            TestRouteMatch("~/Customer/List", "Customer", "List", new { id = "DefaultId" });
-            TestRouteMatch("~/Customer/List/Hello", "Customer", "List", new { id = "Hello" });
-            TestRouteFail("~/Customer/List/Hello/Vasja");
+            //TestRouteMatch("~/Customer", "Customer", "Index", new { id = "DefaultId"});
+            //TestRouteMatch("~/Customer/List", "Customer", "List", new { id = "DefaultId" });
+            //TestRouteMatch("~/Customer/List/Hello", "Customer", "List", new { id = "Hello" });
+            //TestRouteFail("~/Customer/List/Hello/Vasja");
+            //TestRouteMatch("~/Customer/List/Hello/Delete", "Customer", "List", new { id="Hello"});
 
             //проверить значения, получаемые из сегментов
             //TestRouteMatch("~/One/Two", "One", "Two");

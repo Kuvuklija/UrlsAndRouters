@@ -18,9 +18,8 @@ namespace UrlsAndRouters.Controllers
         public ActionResult CustomVariable(string id="DefaultID") {
             ViewBag.Controller = "Home";
             ViewBag.Action = "CustomVariable";
-            // ViewBag.CustomVariable = RouteData.Values["id"]; //получаем значение маршрута в контроллере, если не получаем id в виде параметра
-            //ViewBag.CustomVariable = id;
-            //ViewBag.CustomVariable = id ?? "<no value>"; 
+            // ViewBag.CustomVariable = RouteData.Values["id"]; //получаем значение маршрута в контроллере, если id не в виде параметра
+            //ViewBag.CustomVariable = id ?? "<no value>"; //если у параметра id нет значения по умолчанию 
             ViewBag.CustomVariable = id;
             return View();
         }
