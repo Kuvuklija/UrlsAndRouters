@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace UrlsAndRouters.Controllers.AdditionalControllers
 {
-    public class HomeController : Controller
+    public class HomeOldController : Controller
     {
         public ActionResult Index()
         {
