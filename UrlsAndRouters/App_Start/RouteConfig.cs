@@ -53,14 +53,20 @@ namespace UrlsAndRouters
 
             //routes.MapRoute("ChromeRoute", "{controller}/{action}/{*catchall}",
             //    new { controller = "Home", action = "Index" },
-            //    new { customConstaint = new UserAgentConstraint("Windows") },
+            //    new { customConstraint = new UserAgentConstraint("Windows") },
             //    new[] { "UrlsAndRouters.Controllers.AdditionalControllers" }
             //);
 
             //OUT COMING ROUTES
 
-            routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new { controller = "Home", action = "Index",
-                id = UrlParameter.Optional });
+            routes.MapRoute("NewRoute", "App/Do{action}", new { controller = "Home" });
+
+            routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new
+            {
+                controller = "Home",
+                action = "Index",
+                id = UrlParameter.Optional
+            });
         }
     }
 }

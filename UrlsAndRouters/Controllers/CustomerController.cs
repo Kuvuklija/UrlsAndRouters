@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace UrlsAndRouters.Controllers
 {
-    [RoutePrefix("Global")]
+    //[RoutePrefix("Global")]
     public class CustomerController : Controller
     {
         //[Route("Test")]
