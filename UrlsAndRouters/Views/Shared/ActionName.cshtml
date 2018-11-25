@@ -14,7 +14,33 @@
     <div>The controller is:@ViewBag.Controller</div> 
     <div>The action is:@ViewBag.Action</div>
     <div>
-        @Html.ActionLink("This is an outgoing URL", "CustomVariable")
+        @Html.ActionLink("This is an outgoing URL", "CustomVariable", new { myVar="Hello"})
+    </div>
+    <div>
+        @Html.ActionLink("This target another controller","Index", "Admin");
+    </div>
+    <div>
+        @Html.ActionLink("This target another controller with atributs", "Index", "Customer");
+    </div>
+    <div>
+        @Html.ActionLink("This is an outgoing URL with html-atributs", "Index","Home", null, new { id="myAnchorId", @class="myCSSClass" })
+    </div>
+    <div>
+        @Html.ActionLink("This is full outside URL", "Index","Home",
+       "https","myserver.mydomain.com","myFragmentName",
+       new { id="myID"},
+       new { id="myAnchorID", @class="myCSSClass"}
+       )
+    </div>
+    <div>
+        This is a URL:
+        @Url.Action("Index","Home", new { id="myID"})
+    </div>
+    <div>
+        @Html.ActionLink("Click me", "Index", "Customer")
+    </div>
+    <div>
+        @Html.RouteLink("RouteLink method", "MyOtherRoute", "Index", "Customer")
     </div>
 </body>
 </html>

@@ -16,9 +16,9 @@ namespace UrlsAndRouters
             // IN COMING ROUTES
 
             routes.MapMvcAttributeRoutes();//turn on atributs routing
-            //var 1
-            //Route myRoute = new Route("{controller}/{action}", new MvcRouteHandler());
-            //routes.Add("MyRoute", myRoute);
+                                           //var 1
+                                           //Route myRoute = new Route("{controller}/{action}", new MvcRouteHandler());
+                                           //routes.Add("MyRoute", myRoute);
 
             //var 2 first a specific roule - than general
             //routes.MapRoute("ShopSchema2", "Shop/OldAction", new { controller = "Home", action = "Index" });
@@ -58,8 +58,7 @@ namespace UrlsAndRouters
             //);
 
             //OUT COMING ROUTES
-
-            routes.MapRoute("NewRoute", "App/Do{action}", new { controller = "Home" });
+            //routes.MapRoute("MyRoute", "{controller}/{action}");
 
             routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new
             {
@@ -67,6 +66,10 @@ namespace UrlsAndRouters
                 action = "Index",
                 id = UrlParameter.Optional
             });
+
+            routes.MapRoute("MyOtherRoute", "App/Do{action}", new { controller = "Home"});
+
+           
         }
     }
 }
