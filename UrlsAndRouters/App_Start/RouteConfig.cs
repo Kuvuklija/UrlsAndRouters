@@ -60,16 +60,15 @@ namespace UrlsAndRouters
             //OUT COMING ROUTES
             //routes.MapRoute("MyRoute", "{controller}/{action}");
 
-            routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new
+            routes.MapRoute("MyRoute", "{controller}/{action}/{myVar}", new
             {
                 controller = "Home",
                 action = "Index",
-                id = UrlParameter.Optional
+                myVar = UrlParameter.Optional
             });
 
             routes.MapRoute("MyOtherRoute", "App/Do{action}", new { controller = "Home"});
 
-           
         }
     }
 }

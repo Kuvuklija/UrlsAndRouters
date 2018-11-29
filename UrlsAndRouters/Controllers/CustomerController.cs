@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace UrlsAndRouters.Controllers
 {
-    [RoutePrefix("Global")]
+    //[RoutePrefix("Global")]
     public class CustomerController : Controller
     {
-        [Route("~/Test")]
+        [Route("~/Test",Name ="AddTest")]
         public ActionResult Index(){
             ViewBag.Controller = "Customer";
             ViewBag.Action = "Index";
@@ -22,7 +22,7 @@ namespace UrlsAndRouters.Controllers
             return View("ActionName");
         }
 
-        [Route("Users/Add/{user}/{id:int}")] //parametrs type "id" had limited
+        [Route("Users/Add/{user}/{id:int}",Name ="Vasja")] //parametrs type "id" had limited
         public string Create(string user, int id) {
             return string.Format("User: {0}, ID {1}", user, id);
         }
