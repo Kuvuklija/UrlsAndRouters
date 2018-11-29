@@ -60,6 +60,8 @@ namespace UrlsAndRouters
             //OUT COMING ROUTES
             //routes.MapRoute("MyRoute", "{controller}/{action}");
 
+            routes.Add(new LegacyRoute("~/articles/Windows_3.1_Overview.html", "~/old/.NET_1.0_Class_Library"));
+
             routes.MapRoute("MyRoute", "{controller}/{action}/{myVar}", new
             {
                 controller = "Home",
