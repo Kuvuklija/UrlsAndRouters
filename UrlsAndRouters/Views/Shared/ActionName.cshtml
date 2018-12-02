@@ -45,5 +45,9 @@
     <div>
         @Html.RouteLink("Atribute method", "Vasja",new { user="Vadim", id=123});
     </div>
+    <div>
+        This is a URL:
+        @Html.ActionLink("Legacy routes", "GetLegacyURL", new {legacyURL= "~/articles/Windows_3.1_Overview.html" })
+    </div>
 </body>
 </html>

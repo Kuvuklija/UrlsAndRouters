@@ -14,6 +14,7 @@ namespace UrlsAndRouters
         public static void RegisterRoutes(RouteCollection routes)
         {
             // IN COMING ROUTES
+            routes.RouteExistingFiles = true;
 
             routes.MapMvcAttributeRoutes();//turn on atributs routing
                                            //var 1
@@ -59,17 +60,17 @@ namespace UrlsAndRouters
 
             //OUT COMING ROUTES
             //routes.MapRoute("MyRoute", "{controller}/{action}");
-
             routes.Add(new LegacyRoute("~/articles/Windows_3.1_Overview.html", "~/old/.NET_1.0_Class_Library"));
 
-            routes.MapRoute("MyRoute", "{controller}/{action}/{myVar}", new
-            {
+            routes.Add(new Route("SayHello",new CustomRouteHandler()));
+
+            routes.MapRoute("MyRoute", "{controller}/{action}/{myVar}", new{
                 controller = "Home",
                 action = "Index",
                 myVar = UrlParameter.Optional
-            });
+            }, new[] { "UrlsAndRouters.Controllers"});
 
-            routes.MapRoute("MyOtherRoute", "App/Do{action}", new { controller = "Home"});
+            routes.MapRoute("MyOtherRoute", "App/Do{action}", new { controller = "Home"}, new []{"UrlsAndRouters.Controllers"});
 
         }
     }
