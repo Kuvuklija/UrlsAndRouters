@@ -1,4 +1,4 @@
-﻿
+
 @{
     Layout = null;
 }
@@ -34,10 +34,10 @@
     </div>
     <div>
         This is a URL:
-        @Url.Action("Index","Home", new { id="myID"})
+        @Url.Action("Index","Home", new { myVar="myVar"})
     </div>
     <div>
-        @Html.ActionLink("Click me", "Index", "Customer")
+        @Html.ActionLink("Atribute routing", "Index", "Customer")
     </div>
     <div>
         @Html.RouteLink("RouteLink method", "MyOtherRoute", "Index", "Customer")
